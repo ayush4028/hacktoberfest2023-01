@@ -32,7 +32,7 @@
 
  </div>
     <div class="profile-main">
-        <section >
+        <section id="thumbnail">
         
         
             <img src="https://omicreativedev.github.io/hacktoberfest2023/pages/img/thankyou/contributor_badge.png" alt="Official Contributor Badge" height="231" width="196">
@@ -56,7 +56,7 @@
     </footer>
     </div>
     
-  <script>
+  <script type="module">
 
 
     function populateThemeDropdown() {
@@ -97,8 +97,25 @@
     }
 
     // Attach the changePage and changeTheme functions to the select elements' onchange events
+    
+    import confetti from "https://esm.run/canvas-confetti@1";
+    
+    function handleClick(e) {
+        confetti({
+            particleCount: 150,
+            spread: 60
+          });
+
+        console.log(
+            "click"
+        )
+    }
+
   
+
+
     document.getElementById("theme-select").addEventListener("change", changeTheme);
+    document.getElementById("thumbnail").addEventListener("click", handleClick);
 </script>
 </body>
 </html>
